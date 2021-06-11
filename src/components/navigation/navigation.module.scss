@@ -1,0 +1,15 @@
+.navList {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.navListAnchor {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}

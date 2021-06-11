@@ -1,0 +1,13 @@
+.sectionBreak {
+  position: relative;
+
+  &:after {
+    background-color: rgba(#664b2b, 0.25);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

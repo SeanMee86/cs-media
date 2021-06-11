@@ -1,0 +1,31 @@
+@import "../../../assets/mixins";
+
+.heyThereContainer {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.heyThereContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+
+  img {
+    max-height: 450px;
+    padding: 0 30px;
+  }
+
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+@include imageContainer;
+
+

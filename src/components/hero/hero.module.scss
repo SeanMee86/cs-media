@@ -1,0 +1,22 @@
+.heroContainer {
+  align-items: center;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  position: relative;
+
+  &:after {
+    background-color: rgba(#41504c, 0.75);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.heroLogo {
+  padding: 160px 20px;
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,20 @@
+.getOnTheListContainer {
+  display: flex;
+  margin: auto;
+  max-width: 1170px;
+  padding: 60px 20px;
+
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+  }
+}
+
+.imageContainer {
+  margin-right: 32px;
+  max-height: 100%;
+
+  img {
+    max-height: 350px;
+  }
+}

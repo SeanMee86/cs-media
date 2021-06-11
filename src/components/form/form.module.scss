@@ -1,0 +1,6 @@
+.formContainer {
+  > div p {
+    display: flex;
+    flex-flow: column;
+  }
+}

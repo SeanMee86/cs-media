@@ -1,0 +1,16 @@
+.gridContainer {
+  background-color: #20201d;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px 0;
+}
+
+.gridItem {
+  color: #9b7963;
+  display: flex;
+  font-size: 36px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-transform: uppercase;
+}

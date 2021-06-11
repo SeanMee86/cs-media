@@ -1,0 +1,32 @@
+@import "../../../assets/mixins";
+
+.signatureContainer {
+  align-items: center;
+  display: flex;
+  padding: 20px;
+}
+
+.signatureLine {
+  flex: 1;
+  border: 1px solid #664b2b;
+  background: #664b2b;
+  margin-right: 20px;
+}
+
+.testimonialContainer {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  max-width: 670px;
+  text-align: center;
+}
+
+.whatTheySayContainer {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+@include imageContainer;
