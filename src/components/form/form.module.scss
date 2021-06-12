@@ -1,6 +1,18 @@
 .formContainer {
-  > div p {
+  > div {
     display: flex;
-    flex-flow: column;
+
+    p {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}
+
+.formColumn {
+  width: 50%;
+
+  &:last-child {
+    padding-left: 20px;
   }
 }
