@@ -28,7 +28,7 @@ module.exports = {
     {
         resolve: `gatsby-source-wordpress`,
         options: {
-            url: `http://54.212.245.198/graphql`,
+            url: `https://csmedia.xyz/graphql`,
         },
     },
     {
@@ -39,7 +39,7 @@ module.exports = {
           // This is field under which it's accessible
           fieldName: `wpcontent`,
           // Url to query from
-          url: `http://54.212.245.198/graphql`,
+          url: `https://csmedia.xyz/graphql`,
         },
     },
     {
