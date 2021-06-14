@@ -8,18 +8,18 @@ export const Form = () => (
                 <div className={formStyles.formColumn}>
                     <input type="hidden" name="form-name" value="contact"/>
                     <p>
-                        <label className='labels' htmlFor='name'>Name</label>
+                        <label className='labels' htmlFor='name'>Full Name:</label>
                         <input id='name' type="text" name="name"/>
                     </p>
                 </div>
                 <div className={formStyles.formColumn}>
                     <p>
-                        <label className='labels' htmlFor='email'>Email</label>
+                        <label className='labels' htmlFor='email'>Email:</label>
                         <input id='email' type="email" name="email"/>
                     </p>
                 </div>
             </div>
-            <button className='contactBtn' type="submit">Send</button>
+            <button className='contactBtn' type="submit">Reach Out!</button>
         </form></>
 )
 

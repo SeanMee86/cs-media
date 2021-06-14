@@ -16,7 +16,11 @@
 }
 
 .heroLogo {
-  padding: 160px 20px;
+  max-width: 100%;
   position: relative;
   z-index: 2;
+}
+
+.heroLogoContainer {
+  padding: 160px 20px;
 }

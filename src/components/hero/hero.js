@@ -19,7 +19,7 @@ const Hero = () => {
                 className={heroStyles.heroContainer}
                 style={{backgroundImage: `url(${heroBackgroundImage.sourceUrl})`}}>
                 <Header/>
-                <div>
+                <div className={heroStyles.heroLogoContainer}>
                     <img
                         className={heroStyles.heroLogo}
                         src={heroLogo.sourceUrl} alt=""/>

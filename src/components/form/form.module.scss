@@ -6,13 +6,23 @@
       display: flex;
       flex-flow: column;
     }
+
+    @media screen and (max-width: 550px) {
+      flex-flow: column;
+    }
   }
 }
 
 .formColumn {
   width: 50%;
 
-  &:last-child {
-    padding-left: 20px;
+  @media screen and (min-width: 551px) {
+    &:last-child {
+      padding-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
   }
 }

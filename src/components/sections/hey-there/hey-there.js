@@ -25,7 +25,7 @@ const HeyThere = () => {
         <>
             <div className={heyThereStyles.heyThereContainer} style={{backgroundColor: heyThereBackgroundColor}}>
                 <div className={heyThereStyles.heyThereContent}>
-                    <div>
+                    <div style={{padding: '0 30px'}}>
                         <img src={sourceUrl} alt=""/>
                     </div>
                     <div>
