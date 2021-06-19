@@ -36,7 +36,7 @@ const WhatTheySay = () => {
 
     return (
         <>
-            <div className={whatTheySayStyles.whatTheySayContainer} style={style}>
+            <div id={'testimonials'} className={whatTheySayStyles.whatTheySayContainer} style={style}>
                 <h2 style={{color: '#664b2b', textAlign: 'center'}}>{whatTheySayTitle}</h2>
                 {testimonials}
                 {image1}

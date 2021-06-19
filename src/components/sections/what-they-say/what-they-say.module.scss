@@ -4,6 +4,13 @@
   align-items: center;
   display: flex;
   padding: 20px;
+
+  p {
+    color: #664b2b;
+    font-family: LaLuxe, sans-serif;
+    font-size: 40px;
+    margin: 0;
+  }
 }
 
 .signatureLine {
@@ -14,7 +21,7 @@
 }
 
 .testimonialContainer {
-  font-family: Arial, sans-serif;
+  font-family: Articulat, Arial, sans-serif;
   font-size: 20px;
   max-width: 670px;
   text-align: center;
@@ -27,6 +34,10 @@
   justify-content: center;
   padding: 60px 20px;
   position: relative;
+
+  h2 {
+    font-family: AddingtonLight, serif;
+  }
 
   @media screen and (max-width: 991px) {
     padding: 130px 20px;

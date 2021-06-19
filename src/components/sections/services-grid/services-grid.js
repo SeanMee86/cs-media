@@ -25,7 +25,7 @@ const ServicesGrid = () => {
     ))
     return (
         <>
-            <div className={servicesGridStyles.gridContainer}>
+            <div id={'services'} className={servicesGridStyles.gridContainer}>
                 {services}
             </div>
         </>

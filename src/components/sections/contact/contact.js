@@ -28,7 +28,7 @@ const Contact = () => {
     `)
     return (
         <>
-            <div className={contactStyles.getOnTheListContainer}>
+            <div id={'contact'} className={contactStyles.getOnTheListContainer}>
                 <div className={contactStyles.imageContainer}>
                     <img src={sourceUrl} alt=""/>
                 </div>

@@ -14,14 +14,24 @@
   width: 100%;
   max-width: 960px;
 
+  .heyThereSignature {
+    color: #9b7963;
+    font-family: LaLuxe, serif;
+    font-size: 40px;
+  }
+
   img {
     max-height: 450px;
   }
 
   p {
-    font-family: Arial, sans-serif;
+    font-family: Articulat, Arial, sans-serif;
     font-size: 20px;
     margin-bottom: 32px;
+  }
+
+  h2 {
+    font-family: AddingtonLight, serif;
   }
 
   @media screen and (max-width: 991px) {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {graphql, useStaticQuery} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import * as navStyles from './navigation.module.scss';
 
 const Navigation = () => {
@@ -20,7 +20,7 @@ const Navigation = () => {
         }
     }`)
     const menuItems = nodes.map((node, index) => (
-        <li key={index}><a className={navStyles.navListAnchor} href={node.url}>{node.label}</a></li>
+        <li key={index}><Link to={node.url} className={navStyles.navListAnchor} href={node.url}>{node.label}</Link></li>
     ))
     return (
         <div>

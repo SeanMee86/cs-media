@@ -1,5 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 h2 {
@@ -35,4 +40,24 @@ form button {
 
 form button:hover {
     background-color: #45a049;
+}
+
+@font-face {
+    font-family: 'Addington';
+    src: local('Addington'), url('../assets/fonts/AddingtonCF-Regular.woff') format("woff");
+}
+
+@font-face {
+    font-family: 'AddingtonLight';
+    src: local('AddingtonLight'), url("../assets/fonts/AddingtonCF-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Articulat';
+    src: local('Articulat'), url("../assets/fonts/ArticulatCF-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'LaLuxe';
+    src: local('LaLuxe'), url("../assets/fonts/LaLuxes-Script.ttf") format("truetype");
 }

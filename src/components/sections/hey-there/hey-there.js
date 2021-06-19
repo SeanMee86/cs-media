@@ -9,6 +9,7 @@ const HeyThere = () => {
                 heyThereTitle,
                 heyThereCopy,
                 heyThereBackgroundColor,
+                heyThereSignature,
                 heyThereImage: {
                     sourceUrl
                 },
@@ -23,7 +24,7 @@ const HeyThere = () => {
 
     return (
         <>
-            <div className={heyThereStyles.heyThereContainer} style={{backgroundColor: heyThereBackgroundColor}}>
+            <div id={'about'} className={heyThereStyles.heyThereContainer} style={{backgroundColor: heyThereBackgroundColor}}>
                 <div className={heyThereStyles.heyThereContent}>
                     <div style={{padding: '0 30px'}}>
                         <img src={sourceUrl} alt=""/>
@@ -31,6 +32,7 @@ const HeyThere = () => {
                     <div>
                         <h2 style={{color: '#9b7963'}}>{heyThereTitle}</h2>
                         <div dangerouslySetInnerHTML={{__html: heyThereCopy}}/>
+                        <p className={heyThereStyles.heyThereSignature}>{heyThereSignature}</p>
                     </div>
                 </div>
                 {image1}
