@@ -20,12 +20,33 @@ const WhatTheySay = () => {
 
     const settings = {
         arrows: false,
-        centerMode: true,
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
+        autoplaySpeed: 10000,
+        fadeIn: false,
+        autoplay: true,
+        pauseOnHover: false,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
 
     const style = {
