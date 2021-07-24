@@ -22,6 +22,7 @@ export function TestimonialQuery() {
                 content
                 testimonialSignature {
                   clientName
+                  clientTitle
                 }
               }
             }

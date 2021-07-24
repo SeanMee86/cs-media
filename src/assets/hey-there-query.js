@@ -9,6 +9,7 @@ export function HeyThereQuery() {
               heyThereCopy
               heyThereBackgroundColor
               heyThereSignature
+              heyThereJobTitle
               heyThereImage {
                 sourceUrl
               }

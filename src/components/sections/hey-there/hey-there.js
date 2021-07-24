@@ -10,6 +10,7 @@ const HeyThere = () => {
                 heyThereCopy,
                 heyThereBackgroundColor,
                 heyThereSignature,
+                heyThereJobTitle,
                 heyThereImage: {
                     sourceUrl
                 },
@@ -32,7 +33,7 @@ const HeyThere = () => {
                     <div>
                         <h2 style={{color: '#9b7963'}}>{heyThereTitle}</h2>
                         <div dangerouslySetInnerHTML={{__html: heyThereCopy}}/>
-                        <p className={heyThereStyles.heyThereSignature}>{heyThereSignature}</p>
+                        <p className={heyThereStyles.heyThereSignature}>{heyThereSignature}<br/><span>- {heyThereJobTitle}</span></p>
                     </div>
                 </div>
                 {image1}

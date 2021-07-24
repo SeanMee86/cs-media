@@ -54,12 +54,15 @@ const WhatTheySay = () => {
     }
 
     const testimonials = edges.map((edge, index) => (
-        <div>
-            <div className={whatTheySayStyles.testimonialContainer} key={index}>
+        <div key={index}>
+            <div className={whatTheySayStyles.testimonialContainer}>
                 <div dangerouslySetInnerHTML={{__html: edge.node.content}}/>
                 <div className={whatTheySayStyles.signatureContainer}>
                     <div className={whatTheySayStyles.signatureLine}/>
-                    <p>{edge.node.testimonialSignature.clientName}</p>
+                    <div className={whatTheySayStyles.signatureAndTitle}>
+                        <p style={{marginBottom: '16px'}}>{edge.node.testimonialSignature.clientName}</p>
+                        <p><span>{edge.node.testimonialSignature.clientTitle}</span></p>
+                    </div>
                 </div>
             </div>
         </div>

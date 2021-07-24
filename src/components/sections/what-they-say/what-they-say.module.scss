@@ -1,5 +1,11 @@
 @import "../../../assets/mixins";
 
+.signatureAndTitle {
+  line-height: 1em;
+  max-width: 235px;
+  text-align: left;
+}
+
 .signatureContainer {
   align-items: center;
   display: flex;
@@ -10,6 +16,12 @@
     font-family: LaLuxe, sans-serif;
     font-size: 40px;
     margin: 0;
+  }
+
+  span {
+    font-family: Addington, serif;
+    font-size: 20px;
+    margin-top: 16px;
   }
 }
 
