@@ -19,7 +19,7 @@ export const Form = () => (
                     </p>
                 </div>
             </div>
-            <button className='contactBtn' type="submit">SEND IT!</button>
+            <button className={formStyles.contactBtn} type="submit">REACH OUT!</button>
         </form></>
 )
 

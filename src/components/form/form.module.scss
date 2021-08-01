@@ -26,3 +26,14 @@
     width: 100%;
   }
 }
+
+.contactBtn {
+  background-color: #9a7a63;
+  border-radius: 25px;
+  max-width: 225px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+  background-color: #ce986f;
+}
+}
