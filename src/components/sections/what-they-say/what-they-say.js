@@ -61,7 +61,7 @@ const WhatTheySay = () => {
                     <div className={whatTheySayStyles.signatureLine}/>
                     <div className={whatTheySayStyles.signatureAndTitle}>
                         <p style={{marginBottom: '16px'}}>{edge.node.testimonialSignature.clientName}</p>
-                        <p><span>{edge.node.testimonialSignature.clientTitle}</span></p>
+                        <p><span dangerouslySetInnerHTML={{__html: edge.node.testimonialSignature.clientTitle}}/></p>
                     </div>
                 </div>
             </div>
