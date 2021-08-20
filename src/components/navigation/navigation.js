@@ -20,7 +20,7 @@ const Navigation = () => {
         }
     }`)
     const menuItems = nodes.map((node, index) => (
-        <li key={index}><Link to={node.url} className={navStyles.navListAnchor} href={node.url}>{node.label}</Link></li>
+        <li key={index}><Link to={node.url} className={navStyles.navListAnchor}>{node.label}</Link></li>
     ))
     return (
         <div>

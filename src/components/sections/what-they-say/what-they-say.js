@@ -3,7 +3,7 @@ import {TestimonialQuery} from "../../../assets/testimonial-query";
 import * as whatTheySayStyles from './what-they-say.module.scss';
 import Slider from 'react-slick';
 
-const WhatTheySay = () => {
+const WhatTheySay = (props) => {
     const {
         wpPage: {
             whatTheySay: {
@@ -71,8 +71,21 @@ const WhatTheySay = () => {
     const image1 = whatTheySayGraphicOne ? <div className={whatTheySayStyles.imageContainer}><img src={whatTheySayGraphicOne.sourceUrl} alt=""/></div> : null;
     const image2 = whatTheySayGraphicTwo ? <div className={whatTheySayStyles.imageContainer}><img src={whatTheySayGraphicTwo.sourceUrl} alt=""/></div> : null;
 
-    return (
-        <>
+    let content;
+
+    if(props.isService) {
+        content = (
+            <div className={whatTheySayStyles.whatTheySayContainer} style={style}>
+                <h2 style={{color: '#664b2b', textAlign: 'center'}}>{props.serviceTitle}</h2>
+                <p>{props.serviceTitleSubcopy}</p>
+                <div dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
+                {props.servicesPartnership ? (<div dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
+                {image1}
+                {image2}
+            </div>
+        )
+    } else {
+        content = (
             <div id={'testimonials'} className={whatTheySayStyles.whatTheySayContainer} style={style}>
                 <h2 style={{color: '#664b2b', textAlign: 'center'}}>{whatTheySayTitle}</h2>
                 <Slider {...settings}>
@@ -81,6 +94,12 @@ const WhatTheySay = () => {
                 {image1}
                 {image2}
             </div>
+        )
+    }
+
+    return (
+        <>
+            {content}
         </>
     )
 }

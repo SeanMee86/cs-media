@@ -16,7 +16,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <Seo title="Home" />
-            <Hero/>
+            <Hero isHome={true}/>
             <HeyThere/>
             <ServicesGrid/>
             <SectionBreak/>

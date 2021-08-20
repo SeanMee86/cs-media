@@ -4,7 +4,7 @@ import Header from "../header";
 import {HeaderQuery} from '../../assets/header-query';
 
 
-const Hero = () => {
+const Hero = (props) => {
     const {
         wpPage: {
             heroFields: {
@@ -20,9 +20,13 @@ const Hero = () => {
                 style={{backgroundImage: `url(${heroBackgroundImage.sourceUrl})`}}>
                 <Header/>
                 <div className={heroStyles.heroLogoContainer}>
-                    <img
+                    {props.isHome
+                        ? (<img
                         className={heroStyles.heroLogo}
-                        src={heroLogo.sourceUrl} alt=""/>
+                        src={heroLogo.sourceUrl} alt=""/>)
+                        :
+                        (<h1 style={{fontSize: '72px', color: '#fff', position: 'relative', zIndex: 5}}>{props.pageTitle}</h1>)
+                    }
                 </div>
             </div>
         </>
