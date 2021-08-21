@@ -14,7 +14,6 @@
 }
 
 .gridItem {
-  color: #9b7963;
   display: flex;
   font-family: Addington, serif;
   font-size: 36px;
@@ -23,4 +22,14 @@
   padding: 20px;
   text-transform: uppercase;
   text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #9b7963;
+    transition: color 0.24s ease-in-out;
+
+    &:hover {
+      color: #d7aa8e;
+    }
+  }
 }

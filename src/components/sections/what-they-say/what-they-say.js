@@ -2,6 +2,7 @@ import * as React from "react";
 import {TestimonialQuery} from "../../../assets/testimonial-query";
 import * as whatTheySayStyles from './what-they-say.module.scss';
 import Slider from 'react-slick';
+import ServicesGrid from "../services-grid/services-grid";
 
 const WhatTheySay = (props) => {
     const {
@@ -75,14 +76,19 @@ const WhatTheySay = (props) => {
 
     if(props.isService) {
         content = (
-            <div className={whatTheySayStyles.whatTheySayContainer} style={style}>
-                <h2 style={{color: '#664b2b', textAlign: 'center'}}>{props.serviceTitle}</h2>
-                <p>{props.serviceTitleSubcopy}</p>
-                <div dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
-                {props.servicesPartnership ? (<div dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
-                {image1}
-                {image2}
-            </div>
+            <>
+                <div id={props.anchor} className={whatTheySayStyles.whatTheySayContainer} style={style}>
+                    <div style={{maxWidth: '720px', margin: 'auto'}}>
+                        <h2 style={{color: '#664b2b', textAlign: 'center'}}>{props.serviceTitle}</h2>
+                        <p style={{textAlign: 'center'}}>{props.serviceTitleSubcopy}</p>
+                        <div dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
+                        {props.servicesPartnership ? (<div style={{textAlign: 'center'}} dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
+                        {image1}
+                        {image2}
+                    </div>
+                </div>
+                <ServicesGrid break={true}/>
+            </>
         )
     } else {
         content = (

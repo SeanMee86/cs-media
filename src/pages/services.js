@@ -1,9 +1,10 @@
 import * as React from 'react';
+import {graphql} from "gatsby";
 import Layout from "../components/layout";
 import Hero from "../components/hero/hero";
-import {graphql} from "gatsby";
 import HeyThere from "../components/sections/hey-there/hey-there";
 import WhatTheySay from "../components/sections/what-they-say/what-they-say";
+import Contact from "../components/sections/contact/contact";
 
 const ServicesPage = ({data}) => {
     const {
@@ -11,32 +12,49 @@ const ServicesPage = ({data}) => {
             edges
         }
     } = data;
-    console.log(edges)
-    const services = edges.reverse().map((edge, index) => {
+    const services = edges.map((edge, index) => {
+        const {
+            node: {
+                title,
+                servicesC: {
+                    serviceAnchor,
+                    servicesTitleSubcopy,
+                    servicesPartnership,
+                    servicesContent
+                }
+            }
+        } = edge;
         return index % 2 !== 0
         ? (
-            <WhatTheySay
-                key={index}
-                isService={true}
-                serviceTitle={edge.node.title}
-                serviceTitleSubcopy={edge.node.servicesC.servicesTitleSubcopy}
-                serviceContent={edge.node.servicesC.servicesContent}
-                servicesPartnership={edge.node.servicesC.servicesPartnership} />
+            <>
+                <WhatTheySay
+                    key={index}
+                    anchor={serviceAnchor}
+                    isService={true}
+                    serviceTitle={title}
+                    serviceTitleSubcopy={servicesTitleSubcopy}
+                    serviceContent={servicesContent}
+                    servicesPartnership={servicesPartnership} />
+            </>
         )
         : (
-            <HeyThere
-                key={index}
-                isService={true}
-                serviceTitle={edge.node.title}
-                serviceTitleSubcopy={edge.node.servicesC.servicesTitleSubcopy}
-                serviceContent={edge.node.servicesC.servicesContent}
-                servicesPartnership={edge.node.servicesC.servicesPartnership} />
+            <>
+                <HeyThere
+                    key={index}
+                    anchor={serviceAnchor}
+                    isService={true}
+                    serviceTitle={title}
+                    serviceTitleSubcopy={servicesTitleSubcopy}
+                    serviceContent={servicesContent}
+                    servicesPartnership={servicesPartnership} />
+            </>
             )
     })
     return (
         <Layout>
             <Hero pageTitle={'Services'}/>
             {services}
+            <Contact/>
         </Layout>
     )
 }
@@ -45,13 +63,14 @@ export default ServicesPage;
 
 export const query = graphql`
     query ServicePageQuery {
-      allWpService {
+      allWpService(sort: {fields: date, order: ASC}) {
         edges {
           node {
             servicesC {
               servicesContent
               servicesTitleSubcopy
               servicesPartnership
+              serviceAnchor
             }
             title
           }

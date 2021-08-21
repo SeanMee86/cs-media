@@ -1,18 +1,21 @@
 import * as React from 'react';
-import {graphql, useStaticQuery} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import * as servicesGridStyles from './services-grid.module.scss';
 
-const ServicesGrid = () => {
+const ServicesGrid = (props) => {
     const {
         allWpService: {
             edges
         }
     } = useStaticQuery(graphql`
         query ServicesQuery {
-          allWpService {
+          allWpService(sort: {fields: date, order: ASC}) {
             edges {
               node {
                 title
+                servicesC {
+                    serviceAnchor
+                }
               }
             }
           }
@@ -20,13 +23,13 @@ const ServicesGrid = () => {
     `)
     const services = edges.map((edge, index) => (
         <div className={servicesGridStyles.gridItem} key={index}>
-            {edge.node.title}
+            <Link to={`/services/#${edge.node.servicesC.serviceAnchor}`}>{edge.node.title}</Link>
         </div>
     ))
     return (
         <>
             <div id={'services'} className={servicesGridStyles.gridContainer}>
-                {services}
+                {props.break ? null : services}
             </div>
         </>
     )
