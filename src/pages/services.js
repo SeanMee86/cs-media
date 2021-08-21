@@ -5,6 +5,7 @@ import Hero from "../components/hero/hero";
 import HeyThere from "../components/sections/hey-there/hey-there";
 import WhatTheySay from "../components/sections/what-they-say/what-they-say";
 import Contact from "../components/sections/contact/contact";
+import Seo from "../components/seo";
 
 const ServicesPage = ({data}) => {
     const {
@@ -26,32 +27,29 @@ const ServicesPage = ({data}) => {
         } = edge;
         return index % 2 !== 0
         ? (
-            <>
-                <WhatTheySay
-                    key={index}
-                    anchor={serviceAnchor}
-                    isService={true}
-                    serviceTitle={title}
-                    serviceTitleSubcopy={servicesTitleSubcopy}
-                    serviceContent={servicesContent}
-                    servicesPartnership={servicesPartnership} />
-            </>
+            <WhatTheySay
+                key={index}
+                anchor={serviceAnchor}
+                isService={true}
+                serviceTitle={title}
+                serviceTitleSubcopy={servicesTitleSubcopy}
+                serviceContent={servicesContent}
+                servicesPartnership={servicesPartnership} />
         )
         : (
-            <>
-                <HeyThere
-                    key={index}
-                    anchor={serviceAnchor}
-                    isService={true}
-                    serviceTitle={title}
-                    serviceTitleSubcopy={servicesTitleSubcopy}
-                    serviceContent={servicesContent}
-                    servicesPartnership={servicesPartnership} />
-            </>
+            <HeyThere
+                key={index}
+                anchor={serviceAnchor}
+                isService={true}
+                serviceTitle={title}
+                serviceTitleSubcopy={servicesTitleSubcopy}
+                serviceContent={servicesContent}
+                servicesPartnership={servicesPartnership} />
             )
     })
     return (
         <Layout>
+            <Seo title={'Services'} />
             <Hero pageTitle={'Services'}/>
             {services}
             <Contact/>

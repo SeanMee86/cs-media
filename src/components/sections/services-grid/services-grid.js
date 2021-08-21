@@ -28,7 +28,7 @@ const ServicesGrid = (props) => {
     ))
     return (
         <>
-            <div id={'services'} className={servicesGridStyles.gridContainer}>
+            <div id={'services'} className={servicesGridStyles.gridContainer} style={props.break ? {padding: '10px 0'} : null}>
                 {props.break ? null : services}
             </div>
         </>

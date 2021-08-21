@@ -61,3 +61,10 @@ form button:hover {
     font-family: 'LaLuxe';
     src: local('LaLuxe'), url("../assets/fonts/LaLuxes-Script.ttf") format("truetype");
 }
+
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+}

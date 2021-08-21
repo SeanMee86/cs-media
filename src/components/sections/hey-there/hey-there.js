@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as heyThereStyles from './hey-there.module.scss';
 import {HeyThereQuery} from "../../../assets/hey-there-query";
 import ServicesGrid from "../services-grid/services-grid";
+import * as serviceStyles from "../service-list.module.scss";
 
 const HeyThere = (props) => {
     const {
@@ -34,7 +35,7 @@ const HeyThere = (props) => {
                         <div>
                             <h2 style={{color: '#9b7963', textAlign: 'center'}}>{props.serviceTitle}</h2>
                             <p style={{textAlign: 'center'}}>{props.serviceTitleSubcopy}</p>
-                            <div dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
+                            <div className={serviceStyles.serviceList} dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
                             {props.servicesPartnership ? (<div style={{textAlign: 'center'}} dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
                         </div>
                     </div>

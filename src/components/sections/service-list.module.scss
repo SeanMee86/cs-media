@@ -1,0 +1,27 @@
+.serviceList {
+  ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 64px 0;
+
+    li {
+      display: flex;
+      padding-bottom: 20px;
+      margin-left: -20px;
+      min-width: 33.33%;
+      justify-content: center;
+
+      &:before {
+        content: "\2192";
+        margin-right: 8px;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-left: unset;
+      }
+    }
+  }
+}
