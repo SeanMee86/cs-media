@@ -34,7 +34,7 @@ const HeyThere = (props) => {
                     <div className={heyThereStyles.heyThereContent}>
                         <div>
                             <h2 style={{color: '#9b7963', textAlign: 'center'}}>{props.serviceTitle}</h2>
-                            <p style={{textAlign: 'center'}}>{props.serviceTitleSubcopy}</p>
+                            <p style={{textAlign: 'center', fontWeight: 600}}>{props.serviceTitleSubcopy}</p>
                             <div className={serviceStyles.serviceList} dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
                             {props.servicesPartnership ? (<div style={{textAlign: 'center'}} dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
                         </div>

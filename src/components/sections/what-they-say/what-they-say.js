@@ -81,7 +81,7 @@ const WhatTheySay = (props) => {
                 <div id={props.anchor} className={whatTheySayStyles.whatTheySayContainer} style={style}>
                     <div style={{maxWidth: '960px', margin: 'auto'}}>
                         <h2 style={{color: '#664b2b', textAlign: 'center'}}>{props.serviceTitle}</h2>
-                        <p style={{textAlign: 'center', fontSize: '20px'}}>{props.serviceTitleSubcopy}</p>
+                        <p style={{textAlign: 'center', fontSize: '20px', fontWeight: 600}}>{props.serviceTitleSubcopy}</p>
                         <div className={serviceStyles.serviceList} dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
                         {props.servicesPartnership ? (<div style={{textAlign: 'center'}} dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
                         {image1}
