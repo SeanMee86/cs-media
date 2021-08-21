@@ -25,7 +25,7 @@ const Hero = (props) => {
                         className={heroStyles.heroLogo}
                         src={heroLogo.sourceUrl} alt=""/>)
                         :
-                        (<h1 style={{fontSize: '72px', color: '#fff', position: 'relative', zIndex: 5}}>{props.pageTitle}</h1>)
+                        (<h1 style={{fontSize: '72px', color: '#fff', position: 'relative', zIndex: 5, fontWeight: 400, textTransform: "uppercase"}}>{props.pageTitle}</h1>)
                     }
                 </div>
             </div>

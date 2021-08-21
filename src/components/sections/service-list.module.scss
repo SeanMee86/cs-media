@@ -14,11 +14,6 @@
       min-width: 33.33%;
       justify-content: center;
 
-      &:before {
-        content: "\2192";
-        margin-right: 8px;
-      }
-
       @media screen and (max-width: 767px) {
         margin-left: unset;
       }
