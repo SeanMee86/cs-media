@@ -6,46 +6,40 @@
 
 // You can delete this file if you're not using it
 
-const path = require('path')
-
 exports.createPages = async function({actions, graphql}) {
     const {
         data: {
             allWpPage: {
-                edges
+                nodes
             }
         }
     } = await graphql(`
         query {
-          allWpPage {
-            edges {
-              node {
-                title
-                uri
-                id
-              }
+            allWpPage {
+                nodes {
+                    __typename
+                    title
+                    uri
+                    id
+                    databaseId
+                }
             }
-          }
         }
     `)
-    edges.forEach(edge => {
-        switch (edge.node.title) {
+    nodes.forEach(node => {
+        switch (node.title) {
             case 'Home':
                 actions.createPage({
-                    path: edge.node.uri,
-                    component: path.resolve(`src/templates/home/index.js`),
-                    context: {
-                        id: edge.node.id
-                    }
+                    path: node.uri,
+                    component: require.resolve(`./src/templates/home/index.js`),
+                    context: node
                 })
                 break;
             case 'Services':
                 actions.createPage({
-                    path: edge.node.uri,
-                    component: path.resolve(`src/templates/services/index.js`),
-                    context: {
-                        id: edge.node.id
-                    }
+                    path: node.uri,
+                    component: require.resolve(`./src/templates/services/index.js`),
+                    context: node
                 })
                 break;
         }

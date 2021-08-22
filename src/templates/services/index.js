@@ -6,8 +6,10 @@ import WhatTheySay from "../../components/sections/what-they-say/what-they-say";
 import Contact from "../../components/sections/contact/contact";
 import Seo from "../../components/seo";
 import {ServicesQuery} from "../../assets/services-query";
+import {graphql} from "gatsby";
 
 const ServicesPageTemplate = () => {
+
     const {
         allWpService: {
             edges
@@ -56,5 +58,13 @@ const ServicesPageTemplate = () => {
         </Layout>
     )
 }
-
 export default ServicesPageTemplate;
+
+export const query = graphql`
+    query ServicesPageTemplateQuery($id: String!) {
+        wpPage(id: {eq: $id}) {
+            title
+            id
+        }
+    }
+`
