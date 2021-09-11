@@ -1,14 +1,28 @@
 .formContainer {
   > div {
     display: flex;
+    margin-bottom: 24px;
 
     p {
       display: flex;
       flex-flow: column;
+      margin: 0;
     }
 
     @media screen and (max-width: 550px) {
       flex-flow: column;
+    }
+
+    > div {
+      div:last-child {
+        p {
+          margin-bottom: 0;
+
+          input {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -30,10 +44,11 @@
 .contactBtn {
   background-color: #9a7a63;
   border-radius: 25px;
-  max-width: 225px;
+  display: block;
+  margin: auto;
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-  background-color: #ce986f;
-}
+    background-color: #ce986f;
+  }
 }
