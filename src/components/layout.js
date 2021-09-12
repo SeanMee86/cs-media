@@ -35,35 +35,35 @@ const Layout = ({ children }) => {
         }
     }, [offset])
 
-  const [formStyles, setFormStyles] = useState({
-      bottom: '-200px'
-  });
+    const [formStyles, setFormStyles] = useState({
+        bottom: '-200px'
+    });
 
-  const buttonStyles = {
-      display: 'flex',
-      justifyContent: 'center',
-      fontSize: '42px',
-      height: '60px'
-  }
+    const buttonStyles = {
+        display: 'flex',
+        justifyContent: 'center',
+        fontSize: '42px',
+        height: '60px'
+    }
 
-  const scrollToTop = () => {
-      window.scroll(0, 0);
-  }
+    const scrollToTop = () => {
+        window.scroll(0, 0);
+    }
 
-  return (
-    <>
-      <div>
-        <main>{children}</main>
-        <form className={'back-to-top'} style={formStyles}>
-            <button
-                onClick={scrollToTop}
-                style={buttonStyles}
-                className={styles.contactBtn}
-                type={"button"}>&#8963;</button>
-        </form>
-      </div>
-    </>
-  )
+    return (
+        <>
+            <div>
+                <main>{children}</main>
+                <form className={'back-to-top'} style={formStyles}>
+                    <button
+                        onClick={scrollToTop}
+                        style={buttonStyles}
+                        className={styles.contactBtn}
+                        type={"button"}>&#8963;</button>
+                </form>
+            </div>
+        </>
+    )
 }
 
 Layout.propTypes = {
