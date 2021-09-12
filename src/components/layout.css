@@ -38,6 +38,13 @@ form button {
     cursor: pointer;
 }
 
+.back-to-top {
+    max-width: unset;
+    position: fixed;
+    right: 20px;
+    transition: 0.24s bottom ease-in-out;
+}
+
 form button:hover {
     background-color: #45a049;
 }

@@ -11,16 +11,32 @@ import "./layout.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as styles from "./form/form.module.scss";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const Layout = ({ children }) => {
 
+    const [offset, setOffSet] = useState(0);
+
+    useEffect(() => {
+        window.onscroll = () => {
+            setOffSet(window.pageYOffset);
+        }
+    }, [])
+
+    useEffect(() => {
+        if(offset > 70) {
+            setFormStyles({
+                bottom: '20px'
+            })
+        } else {
+            setFormStyles({
+                bottom: '-200px'
+            })
+        }
+    }, [offset])
+
   const [formStyles, setFormStyles] = useState({
-      maxWidth: 'unset',
-      position: 'fixed',
-      bottom: '-200px',
-      right: '20px',
-      transition: '0.24s bottom ease-in-out'
+      bottom: '-200px'
   });
 
   const buttonStyles = {
@@ -38,8 +54,12 @@ const Layout = ({ children }) => {
     <>
       <div>
         <main>{children}</main>
-        <form style={formStyles}>
-            <button onClick={scrollToTop} style={buttonStyles} className={styles.contactBtn} type={"button"}>&#8963;</button>
+        <form className={'back-to-top'} style={formStyles}>
+            <button
+                onClick={scrollToTop}
+                style={buttonStyles}
+                className={styles.contactBtn}
+                type={"button"}>&#8963;</button>
         </form>
       </div>
     </>
