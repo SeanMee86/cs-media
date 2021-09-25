@@ -11,12 +11,13 @@ import "./layout.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as styles from "./form/form.module.scss";
+import * as backToTopButton from '../images/btb-button.png'
 import {useEffect, useState} from "react";
 
 const Layout = ({ children }) => {
 
     const [offset, setOffSet] = useState(0);
-
+    console.dir(backToTopButton)
     useEffect(() => {
         window.onscroll = () => {
             setOffSet(window.pageYOffset);
@@ -42,6 +43,7 @@ const Layout = ({ children }) => {
     const buttonStyles = {
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         fontSize: '42px',
         height: '60px'
     }
@@ -53,13 +55,14 @@ const Layout = ({ children }) => {
     return (
         <>
             <div>
-                <main>{children}</main>
+                <main style={{overflow: 'hidden'}}>{children}</main>
                 <form className={'back-to-top'} style={formStyles}>
                     <button
+                        aria-label={'Back to Top Button'}
                         onClick={scrollToTop}
                         style={buttonStyles}
                         className={styles.contactBtn}
-                        type={"button"}>&#8963;</button>
+                        type={"button"}><img style={{maxWidth: '100%'}} src={backToTopButton.default} alt=""/></button>
                 </form>
             </div>
         </>

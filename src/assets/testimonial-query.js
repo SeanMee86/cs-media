@@ -11,6 +11,9 @@ export function TestimonialQuery() {
               whatTheySayGraphicTwo {
                 sourceUrl
               }
+              whatTheySayFirstServiceGraphic {
+                sourceUrl
+              }
               whatTheySayBackgroundColor
               whatTheySayTitle
             }

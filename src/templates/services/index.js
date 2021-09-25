@@ -27,32 +27,58 @@ const ServicesPageTemplate = () => {
                 }
             }
         } = edge;
-        return index % 2 !== 0
-            ? (
+        if(index === 0) {
+            return (
                 <WhatTheySay
                     key={index}
                     anchor={serviceAnchor}
                     isService={true}
+                    firstService={true}
                     serviceTitle={title}
                     serviceTitleSubcopy={servicesTitleSubcopy}
                     serviceContent={servicesContent}
                     servicesPartnership={servicesPartnership} />
             )
-            : (
+        } else if(index === 1) {
+            return (
                 <HeyThere
                     key={index}
                     anchor={serviceAnchor}
                     isService={true}
+                    secondService={true}
                     serviceTitle={title}
                     serviceTitleSubcopy={servicesTitleSubcopy}
                     serviceContent={servicesContent}
                     servicesPartnership={servicesPartnership} />
             )
+        } else {
+            return index % 2 === 0
+                ? (
+                    <WhatTheySay
+                        key={index}
+                        anchor={serviceAnchor}
+                        isService={true}
+                        serviceTitle={title}
+                        serviceTitleSubcopy={servicesTitleSubcopy}
+                        serviceContent={servicesContent}
+                        servicesPartnership={servicesPartnership} />
+                )
+                : (
+                    <HeyThere
+                        key={index}
+                        anchor={serviceAnchor}
+                        isService={true}
+                        serviceTitle={title}
+                        serviceTitleSubcopy={servicesTitleSubcopy}
+                        serviceContent={servicesContent}
+                        servicesPartnership={servicesPartnership} />
+                )
+        }
     })
     return (
         <Layout>
             <Seo title={'Services'} />
-            <Hero pageTitle={'Services'}/>
+            <Hero hasText={true} pageTitle={'Services'}/>
             {services}
             <Contact/>
         </Layout>

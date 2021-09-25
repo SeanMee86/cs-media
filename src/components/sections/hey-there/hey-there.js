@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as heyThereStyles from './hey-there.module.scss';
 import {HeyThereQuery} from "../../../assets/hey-there-query";
-import ServicesGrid from "../services-grid/services-grid";
 import * as serviceStyles from "../service-list.module.scss";
 
 const HeyThere = (props) => {
@@ -17,13 +16,23 @@ const HeyThere = (props) => {
                     sourceUrl
                 },
                 heyThereGraphicOne,
-                heyThereGraphicTwo
+                heyThereGraphicTwo,
+                heyThereSecondServiceGraphic
             }
         }
     } = HeyThereQuery();
 
     const image1 = heyThereGraphicOne ? <div className={heyThereStyles.imageContainer}><img src={heyThereGraphicOne.sourceUrl} alt=""/></div> : null;
     const image2 = heyThereGraphicTwo ? <div className={heyThereStyles.imageContainer}><img src={heyThereGraphicTwo.sourceUrl} alt=""/></div> : null;
+    const secondServiceImage = heyThereSecondServiceGraphic ? <div className={heyThereStyles.secondServiceGraphic}><img src={heyThereSecondServiceGraphic.sourceUrl} alt=""/></div> : null;
+
+    const subCopyStyle = {
+        textAlign: 'center',
+        fontSize: '26px',
+        fontWeight: 600,
+        fontStyle: 'italic',
+        color:' rgb(102, 75, 43)'
+    }
 
     let content;
 
@@ -34,15 +43,14 @@ const HeyThere = (props) => {
                     <div className={heyThereStyles.heyThereContent}>
                         <div>
                             <h2 style={{color: '#9b7963', textAlign: 'center'}}>{props.serviceTitle}</h2>
-                            <p style={{textAlign: 'center', fontWeight: 600}}>{props.serviceTitleSubcopy}</p>
+                            <p style={subCopyStyle}>{props.serviceTitleSubcopy}</p>
                             <div className={serviceStyles.serviceList} dangerouslySetInnerHTML={{__html: props.serviceContent}}/>
                             {props.servicesPartnership ? (<div style={{textAlign: 'center'}} dangerouslySetInnerHTML={{__html: props.servicesPartnership}}/>) : null}
                         </div>
                     </div>
-                    {image1}
-                    {image2}
+                    {props.secondService ? null : image1}
+                    {props.secondService ? secondServiceImage : image2}
                 </div>
-                <ServicesGrid break={true}/>
             </>
         )
     } else {

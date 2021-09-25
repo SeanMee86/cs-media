@@ -13,19 +13,31 @@ const Hero = (props) => {
             }
         }
     } = HeaderQuery();
+
+    const serviceHeaderStyle = {
+        width: '100%',
+        maxWidth: '600px',
+        borderRadius: '4px',
+        border: '1px solid #fff',
+        padding: '35px 0 40px',
+        margin: '160px 20px',
+        textAlign: 'center',
+        zIndex: 2
+    }
+
     return (
         <>
             <div
                 className={heroStyles.heroContainer}
                 style={{backgroundImage: `url(${heroBackgroundImage.sourceUrl})`}}>
                 <Header/>
-                <div className={heroStyles.heroLogoContainer}>
+                <div style={props.hasText ? serviceHeaderStyle : null} className={heroStyles.heroLogoContainer}>
                     {props.isHome
                         ? (<img
                         className={heroStyles.heroLogo}
                         src={heroLogo.sourceUrl} alt=""/>)
                         :
-                        (<h1 style={{fontSize: '72px', color: '#fff', position: 'relative', zIndex: 5, fontWeight: 400, textTransform: "uppercase"}}>{props.pageTitle}</h1>)
+                        (<h1 style={{color: '#fff', position: 'relative', zIndex: 5, fontWeight: 400, textTransform: "uppercase", margin: props.hasText ? 0 : 'inherit'}}>{props.pageTitle}</h1>)
                     }
                 </div>
             </div>

@@ -6,6 +6,10 @@
   padding: 60px 20px;
   position: relative;
   font-family: AddingtonLight, "Times New Roman", serif;
+
+  @media screen and (max-width: 991px) {
+    padding: 130px 20px;
+  }
 }
 
 .heyThereContent {
@@ -48,6 +52,26 @@
       margin-bottom: 30px;
       max-width: 100%;
     }
+  }
+}
+
+.secondServiceGraphic {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+
+  img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
+
+  @media screen and (max-width: 991px) {
+    max-height: 150px;
+    max-width: 150px;
+    right: -12px;
   }
 }
 

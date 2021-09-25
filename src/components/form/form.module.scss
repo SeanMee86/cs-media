@@ -42,13 +42,18 @@
 }
 
 .contactBtn {
-  background-color: #9a7a63;
+  background-color: transparent;
   border-radius: 25px;
   display: block;
   margin: auto;
-  transition: background-color 0.2s ease-in-out;
+
+  img  {
+    border-radius: 50px;
+    box-shadow: rgb(0 0 0 / 35%) 0 5px 15px;
+    transition: box-shadow 0.2s ease-in-out;
+  }
 
   &:hover {
-    background-color: #ce986f;
+    background-color: transparent;
   }
 }

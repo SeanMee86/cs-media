@@ -19,6 +19,9 @@ export function HeyThereQuery() {
               heyThereGraphicTwo {
                 sourceUrl
               }
+              heyThereSecondServiceGraphic {
+                sourceUrl
+              }
             }
           }
         }
