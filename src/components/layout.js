@@ -17,7 +17,6 @@ import {useEffect, useState} from "react";
 const Layout = ({ children }) => {
 
     const [offset, setOffSet] = useState(0);
-    console.dir(backToTopButton)
     useEffect(() => {
         window.onscroll = () => {
             setOffSet(window.pageYOffset);

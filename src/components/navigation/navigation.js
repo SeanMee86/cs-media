@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {graphql, Link, useStaticQuery} from "gatsby";
 import * as navStyles from './navigation.module.scss';
+import './navigation.scss';
+import {useState} from "react";
 
 const Navigation = () => {
     const {
@@ -19,15 +21,52 @@ const Navigation = () => {
             }
         }
     }`)
+
+    const onLinkClick = () => {
+        setCheckboxState(false);
+        setMenuClass([navStyles.navList])
+    }
+
+    const [menuClass, setMenuClass] = useState([
+        navStyles.navList
+    ])
+
+    const [checkboxState, setCheckboxState] = useState(false);
+
     const menuItems = nodes.map((node, index) => (
-        <li key={index}><Link to={node.url} className={navStyles.navListAnchor}>{node.label}</Link></li>
+        <li key={index}>
+            <Link
+                to={node.url}
+                className={navStyles.navListAnchor}
+                onClick={onLinkClick}>{node.label}</Link>
+        </li>
     ))
+
+    const onInputToggle = (e) => {
+        if(e.target.checked) {
+            setMenuClass([...menuClass, 'show'])
+        } else {
+            setMenuClass([navStyles.navList])
+        }
+    }
+
+
+
     return (
-        <div>
-            <ul className={navStyles.navList}>
+        <nav className="nav-primary">
+            <input
+                type="checkbox"
+                className="nav__mobile-input"
+                onClick={() => setCheckboxState(!checkboxState)}
+                onChange={onInputToggle}
+                checked={checkboxState} />
+            <div className="nav__hamburger-container">
+                <div className="nav__hamburger"/>
+            </div>
+            <ul id={'menu-primary-navigation'} className={menuClass.join(' ')}>
                 {menuItems}
             </ul>
-        </div>
+        </nav>
     )
 }
 
