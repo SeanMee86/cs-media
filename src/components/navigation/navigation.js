@@ -25,6 +25,8 @@ const Navigation = () => {
     const onLinkClick = () => {
         setCheckboxState(false);
         setMenuClass([navStyles.navList])
+        document.querySelector('html').style.height = '';
+        document.querySelector('html').style.overflow = '';
     }
 
     const [menuClass, setMenuClass] = useState([
@@ -45,8 +47,12 @@ const Navigation = () => {
     const onInputToggle = (e) => {
         if(e.target.checked) {
             setMenuClass([...menuClass, 'show'])
+            document.querySelector('html').style.height = '100vh';
+            document.querySelector('html').style.overflow = 'hidden';
         } else {
             setMenuClass([navStyles.navList])
+            document.querySelector('html').style.height = '';
+            document.querySelector('html').style.overflow = '';
         }
     }
 
