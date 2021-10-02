@@ -35,7 +35,7 @@ export const Form = () => (
                     </div>
                 </div>
             </div>
-            <button className={formStyles.contactBtn} type="submit">REACH OUT!</button>
+            <button className={`${formStyles.contactBtn} ${formStyles.formBtn}`} type="submit">REACH OUT!</button>
         </form>
     </>
 )

@@ -56,4 +56,13 @@
   &:hover {
     background-color: transparent;
   }
+
+  &.formBtn {
+    background-color: #664b2b;
+    transition: background-color 0.24s ease-in-out;
+
+    &:hover {
+      background-color: #9b7a64;
+    }
+  }
 }
