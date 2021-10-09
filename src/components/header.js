@@ -8,12 +8,17 @@ console.log(csLogo)
 
 const Header = () => (
   <header className={headerStyles.header}>
-    <Link to={'/'}><img style={{position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: '50px'}} src={csLogo.default} alt="CS Media Logo"/></Link>
+    <Link to={'/'}>
+        <img
+            className={headerStyles.headerLogo}
+            src={csLogo.default} alt="CS Media Logo"
+        />
+    </Link>
     <div
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1.45rem 7.0875rem`,
       }}
     >
       <Navigation/>

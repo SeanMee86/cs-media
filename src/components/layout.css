@@ -45,7 +45,7 @@ form button {
     transition: 0.24s bottom ease-in-out;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 767px) {
     .back-to-top {
         right: -45px;
     }

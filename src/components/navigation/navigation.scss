@@ -38,7 +38,7 @@
   width: 36px;
   z-index: 1;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 767px) {
     display: flex;
   }
 }
@@ -55,7 +55,7 @@
   width: 36px;
   z-index: 2;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 767px) {
     display: block;
   }
 }
@@ -79,7 +79,7 @@
 }
 
 #menu-primary-navigation {
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 767px) {
     align-items: flex-start;
     background-color: rgba(#9b7a64, 1);
     box-sizing: border-box;
@@ -91,7 +91,6 @@
     top: -100vh;
     transition: top ease-in-out 0.24s;
     width: 100vw;
-    z-index: -1;
 
     &.show {
       box-shadow: 0 4px 12px rgba(gray, 0.08);

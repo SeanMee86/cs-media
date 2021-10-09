@@ -4,3 +4,16 @@
   width: 100%;
   z-index: 3;
 }
+
+.headerLogo {
+  left: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: 767px) {
+    left: 0;
+    top: 10px;
+    transform: translateY(0);
+  }
+}
