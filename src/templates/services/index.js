@@ -27,7 +27,7 @@ const ServicesPageTemplate = () => {
                 }
             }
         } = edge;
-        if(index === 0) {
+        if(index === 2) {
             return (
                 <WhatTheySay
                     key={index}
@@ -39,7 +39,7 @@ const ServicesPageTemplate = () => {
                     serviceContent={servicesContent}
                     servicesPartnership={servicesPartnership} />
             )
-        } else if(index === 1) {
+        } else if(index === 3) {
             return (
                 <HeyThere
                     key={index}
