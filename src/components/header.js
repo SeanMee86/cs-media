@@ -1,10 +1,8 @@
 import * as React from "react"
 import * as headerStyles from './header.module.scss';
-import * as csLogo from '../images/cs-media-logo.png';
+import * as csLogo from '../images/C.S.Media_Home_Button_FINAL.png';
 import {Link} from 'gatsby';
 import Navigation from "./navigation/navigation";
-
-console.log(csLogo)
 
 const Header = () => (
   <header className={headerStyles.header}>

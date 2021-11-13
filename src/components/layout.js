@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import * as styles from "./form/form.module.scss";
 import * as backToTopButton from '../images/btb-button.png'
 import {useEffect, useState} from "react";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
 
@@ -55,6 +56,7 @@ const Layout = ({ children }) => {
         <>
             <div>
                 <main style={{overflow: 'hidden'}}>{children}</main>
+                <Footer/>
                 <form className={'back-to-top'} style={formStyles}>
                     <button
                         aria-label={'Back to Top Button'}

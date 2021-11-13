@@ -2,6 +2,7 @@ import * as React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import * as contactStyles from './contact.module.scss';
 import Form from "../../form/form";
+
 const Contact = () => {
     const {
         wpPage: {

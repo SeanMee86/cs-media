@@ -1,0 +1,25 @@
+.socialIcons {
+  margin-right: 16px;
+
+  path {
+    fill: #664b2b;
+    transition: fill 0.24s ease-in-out;
+  }
+
+  &:hover {
+    path {
+      fill: #9b7a64;
+    }
+  }
+}
+
+.socialIconsContainer {
+  display: flex;
+  text-align: right;
+
+  .socialIcons {
+    svg {
+      width: 100%;
+    }
+  }
+}

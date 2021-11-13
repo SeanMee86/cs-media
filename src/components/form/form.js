@@ -2,7 +2,7 @@ import * as React from "react";
 import * as formStyles from './form.module.scss'
 
 export const Form = () => (
-    <>
+    <div>
         <form className={formStyles.formContainer} name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true">
             <div>
                 <div className={formStyles.formColumn}>
@@ -37,7 +37,7 @@ export const Form = () => (
             </div>
             <button className={`${formStyles.contactBtn} ${formStyles.formBtn}`} type="submit">REACH OUT!</button>
         </form>
-    </>
+    </div>
 )
 
 export default Form;
