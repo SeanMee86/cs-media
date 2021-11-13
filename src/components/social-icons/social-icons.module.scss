@@ -11,6 +11,10 @@
       fill: #9b7a64;
     }
   }
+
+  @media screen and(max-width: 650px) {
+    margin-right: 10px;
+  }
 }
 
 .socialIconsContainer {
