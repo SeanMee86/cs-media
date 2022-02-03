@@ -1,14 +1,13 @@
 import * as React from 'react';
-import Layout from "../../components/layout";
-import Hero from "../../components/hero/hero";
-import HeyThere from "../../components/sections/hey-there/hey-there";
-import WhatTheySay from "../../components/sections/what-they-say/what-they-say";
-import Contact from "../../components/sections/contact/contact";
-import Seo from "../../components/seo";
-import {ServicesQuery} from "../../assets/services-query";
-import {graphql} from "gatsby";
+import Layout from "../components/layout";
+import Hero from "../components/hero/hero";
+import HeyThere from "../components/sections/hey-there/hey-there";
+import WhatTheySay from "../components/sections/what-they-say/what-they-say";
+import Contact from "../components/sections/contact/contact";
+import Seo from "../components/seo";
+import {ServicesQuery} from "../assets/services-query";
 
-const ServicesPageTemplate = () => {
+const ServicesPage = () => {
 
     const {
         allWpService: {
@@ -84,13 +83,4 @@ const ServicesPageTemplate = () => {
         </Layout>
     )
 }
-export default ServicesPageTemplate;
-
-export const query = graphql`
-    query ServicesPageTemplateQuery($id: String!) {
-        wpPage(id: {eq: $id}) {
-            title
-            id
-        }
-    }
-`
+export default ServicesPage;

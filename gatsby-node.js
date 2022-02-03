@@ -9,24 +9,12 @@
 exports.createPages = async function({actions, graphql}) {
     const {
         data: {
-            allWpPage: {
-                pageNodes
-            },
             allWpClient: {
                 clientNodes
             }
         }
     } = await graphql(`
         query {
-            allWpPage {
-                pageNodes: nodes {
-                    __typename
-                    title
-                    uri
-                    id
-                    databaseId
-                }
-            }
             allWpClient {
                 clientNodes: nodes {
                     uri
@@ -35,24 +23,6 @@ exports.createPages = async function({actions, graphql}) {
             }
         }
     `)
-    pageNodes.forEach(node => {
-        switch (node.title) {
-            case 'Home':
-                actions.createPage({
-                    path: node.uri,
-                    component: require.resolve(`./src/templates/home/index.js`),
-                    context: node
-                })
-                break;
-            case 'Services':
-                actions.createPage({
-                    path: node.uri,
-                    component: require.resolve(`./src/templates/services/index.js`),
-                    context: node
-                })
-                break;
-        }
-    })
     clientNodes.forEach(node => {
         actions.createPage({
             path: node.uri,

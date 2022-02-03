@@ -1,10 +1,16 @@
 import * as React from 'react';
 import {graphql} from "gatsby";
+import Layout from "../../components/layout";
+import Hero from "../../components/hero/hero";
+import Contact from "../../components/sections/contact/contact";
 
-const ClientsPageTemplate = ({data}) => {
-    console.log(data)
+const ClientsPageTemplate = ({data: {wpClient: {clientsPost}}}) => {
+    console.log(clientsPost)
     return (
-        <h1>Hello</h1>
+        <Layout>
+            <Hero hasText={true} pageTitle={'Our Work'} />
+            <Contact/>
+        </Layout>
     )
 }
 
@@ -39,7 +45,6 @@ export const CLIENTS_TEMPLATE_QUERY = graphql`
           }
           strategyCopy
         }
-        id
       }
     }
 `
