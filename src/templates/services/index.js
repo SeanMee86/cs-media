@@ -4,11 +4,11 @@ import Hero from "../../components/hero/hero";
 import HeyThere from "../../components/sections/hey-there/hey-there";
 import WhatTheySay from "../../components/sections/what-they-say/what-they-say";
 import Contact from "../../components/sections/contact/contact";
-import Seo from "../../components/seo";
+import Seo from "gatsby-plugin-wpgraphql-seo";
 import {ServicesQuery} from "../../assets/services-query";
 import {graphql} from "gatsby";
 
-const ServicesPageTemplate = () => {
+const ServicesPageTemplate = ({data: {wpPage}}) => {
 
     const {
         allWpService: {
@@ -77,7 +77,7 @@ const ServicesPageTemplate = () => {
     })
     return (
         <Layout>
-            <Seo title={'Services'} />
+            <Seo post={wpPage} />
             <Hero hasText={true} pageTitle={'Services'}/>
             {services}
             <Contact/>
@@ -89,8 +89,39 @@ export default ServicesPageTemplate;
 export const query = graphql`
     query ServicesPageTemplateQuery($id: String!) {
         wpPage(id: {eq: $id}) {
-            title
             id
+            nodeType
+            title
+            uri
+            seo {
+                title
+                metaDesc
+                focuskw
+                metaKeywords
+                metaRobotsNoindex
+                metaRobotsNofollow
+                opengraphTitle
+                opengraphDescription
+                opengraphImage {
+                    altText
+                    sourceUrl
+                    srcSet
+                }
+                twitterTitle
+                twitterDescription
+                twitterImage {
+                    altText
+                    sourceUrl
+                    srcSet
+                }
+                canonical
+                cornerstone
+                schema {
+                    articleType
+                    pageType
+                    raw
+                }
+            }
         }
     }
 `
