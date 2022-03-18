@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as heyThereStyles from './hey-there.module.scss';
 import {HeyThereQuery} from "../../../assets/hey-there-query";
 import * as serviceStyles from "../service-list.module.scss";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const HeyThere = (props) => {
     const {
@@ -13,7 +14,7 @@ const HeyThere = (props) => {
                 heyThereSignature,
                 heyThereJobTitle,
                 heyThereImage: {
-                    sourceUrl
+                    localFile
                 },
                 heyThereGraphicOne,
                 heyThereGraphicTwo,
@@ -22,9 +23,18 @@ const HeyThere = (props) => {
         }
     } = HeyThereQuery();
 
-    const image1 = heyThereGraphicOne ? <div className={heyThereStyles.imageContainer}><img src={heyThereGraphicOne.sourceUrl} alt=""/></div> : null;
-    const image2 = heyThereGraphicTwo ? <div className={heyThereStyles.imageContainer}><img src={heyThereGraphicTwo.sourceUrl} alt=""/></div> : null;
-    const secondServiceImage = heyThereSecondServiceGraphic ? <div className={heyThereStyles.secondServiceGraphic}><img src={heyThereSecondServiceGraphic.sourceUrl} alt=""/></div> : null;
+    const image1 = heyThereGraphicOne &&
+        (<div className={heyThereStyles.imageContainer}>
+            <GatsbyImage image={getImage(heyThereGraphicOne.localFile)} alt=""/>
+        </div>)
+    const image2 = heyThereGraphicTwo &&
+        (<div className={heyThereStyles.imageContainer}>
+            <GatsbyImage style={{position: 'absolute', bottom: 0}} image={getImage(heyThereGraphicTwo.localFile)} alt=""/>
+        </div>)
+    const secondServiceImage = heyThereSecondServiceGraphic &&
+        (<div className={heyThereStyles.secondServiceGraphic}>
+            <GatsbyImage style={{position: 'absolute', bottom: 0, right: 0, height: '100%'}} image={getImage(heyThereSecondServiceGraphic.localFile)} alt=""/>
+        </div>)
 
     const subCopyStyle = {
         textAlign: 'center',
@@ -40,7 +50,7 @@ const HeyThere = (props) => {
         content = (
             <>
                 <div id={props.anchor} className={heyThereStyles.heyThereContainer} style={{backgroundColor: heyThereBackgroundColor}}>
-                    <div className={heyThereStyles.heyThereContent}>
+                    <div style={props.isService && {display: 'flex'}} className={heyThereStyles.heyThereContent}>
                         <div>
                             <h2 style={{color: '#9b7963', textAlign: 'center'}}>{props.serviceTitle}</h2>
                             <p style={subCopyStyle}>{props.serviceTitleSubcopy}</p>
@@ -57,10 +67,10 @@ const HeyThere = (props) => {
         content = (
             <div id={'about'} className={heyThereStyles.heyThereContainer} style={{backgroundColor: heyThereBackgroundColor}}>
                 <div className={heyThereStyles.heyThereContent}>
-                    <div style={{padding: '0 30px'}}>
-                        <img src={sourceUrl} alt=""/>
+                    <div className={heyThereStyles.image} style={{padding: '0 30px'}}>
+                        <GatsbyImage image={getImage(localFile)} alt=""/>
                     </div>
-                    <div>
+                    <div className={heyThereStyles.heyThereCopy}>
                         <h2 style={{color: '#9b7963'}}>{heyThereTitle}</h2>
                         <div dangerouslySetInnerHTML={{__html: heyThereCopy}}/>
                         <p className={heyThereStyles.heyThereSignature}>{heyThereSignature}<br/><span>- {heyThereJobTitle}</span></p>

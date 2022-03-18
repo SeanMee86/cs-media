@@ -2,6 +2,9 @@ import * as React from 'react';
 import * as heroStyles from './hero.module.scss';
 import Header from "../header";
 import {HeaderQuery} from '../../assets/header-query';
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
+import {convertToBgImage} from "gbimage-bridge";
+import BackgroundImage from "gatsby-background-image";
 
 
 const Hero = (props) => {
@@ -25,22 +28,24 @@ const Hero = (props) => {
         zIndex: 2
     }
 
+    const image = getImage(heroBackgroundImage.localFile)
+    const bgImage = convertToBgImage(image);
+
     return (
         <>
-            <div
-                className={heroStyles.heroContainer}
-                style={{backgroundImage: `url(${heroBackgroundImage.sourceUrl})`}}>
+            <BackgroundImage className={heroStyles.heroContainer} Tag={'section'} {...bgImage} preserveStackingContext>
+                <div className={heroStyles.overlay}/>
                 <Header/>
                 <div style={props.hasText ? serviceHeaderStyle : null} className={heroStyles.heroLogoContainer}>
                     {props.isHome
-                        ? (<img
-                        className={heroStyles.heroLogo}
-                        src={heroLogo.sourceUrl} alt=""/>)
+                        ? (<GatsbyImage
+                            className={heroStyles.heroLogo}
+                            image={getImage(heroLogo.localFile)} alt=""/>)
                         :
                         (<h1 style={{color: '#fff', position: 'relative', zIndex: 5, fontWeight: 400, textTransform: "uppercase", margin: props.hasText ? 0 : 'inherit'}}>{props.pageTitle}</h1>)
                     }
                 </div>
-            </div>
+            </BackgroundImage>
         </>
     )
 }

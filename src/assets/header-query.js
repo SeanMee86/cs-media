@@ -6,10 +6,18 @@ export function HeaderQuery() {
       wpPage(slug: {eq: "home"}) {
         heroFields {
           heroBackgroundImage {
-            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 1200, placeholder: BLURRED, formats: [AUTO, WEBP])
+              }
+            }
           }
           heroLogo {
-            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP])
+              }
+            }
           }
         }
       }

@@ -1,4 +1,5 @@
 import * as React from "react";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {TestimonialQuery} from "../../../assets/testimonial-query";
 import * as whatTheySayStyles from './what-they-say.module.scss';
 import Slider from 'react-slick';
@@ -78,9 +79,18 @@ const WhatTheySay = (props) => {
         </div>
     ))
 
-    const image1 = whatTheySayGraphicOne ? <div className={whatTheySayStyles.imageContainer}><img src={whatTheySayGraphicOne.sourceUrl} alt=""/></div> : null;
-    const image2 = whatTheySayGraphicTwo ? <div className={whatTheySayStyles.imageContainer}><img src={whatTheySayGraphicTwo.sourceUrl} alt=""/></div> : null;
-    const firstServiceImage = whatTheySayFirstServiceGraphic ? <div className={whatTheySayStyles.firstServiceGraphic}><img src={whatTheySayFirstServiceGraphic.sourceUrl} alt=""/></div> : null;
+    const image1 = whatTheySayGraphicOne &&
+        (<div className={whatTheySayStyles.imageContainer}>
+            <GatsbyImage image={getImage(whatTheySayGraphicOne.localFile)} alt={""} />
+        </div>)
+    const image2 = whatTheySayGraphicTwo &&
+        (<div className={whatTheySayStyles.imageContainer}>
+            <GatsbyImage className={whatTheySayStyles.bottomImage} image={getImage(whatTheySayGraphicTwo.localFile)} alt={""} />
+        </div>)
+    const firstServiceImage = whatTheySayFirstServiceGraphic &&
+        (<div className={whatTheySayStyles.firstServiceGraphic}>
+            <GatsbyImage image={getImage(whatTheySayFirstServiceGraphic.localFile)} alt={""} />
+        </div>)
 
     let content;
 
