@@ -1,33 +1,22 @@
 import * as React from "react"
 
-import Layout from "../../components/layout"
+import Layout from "../components/layout"
 import Seo from "gatsby-plugin-wpgraphql-seo"
-import Hero from "../../components/hero/hero";
-import HeyThere from "../../components/sections/hey-there/hey-there";
-import ServicesGrid from "../../components/sections/services-grid/services-grid";
-import SectionBreak from "../../components/sections/section-break";
-import WhatTheySay from "../../components/sections/what-they-say/what-they-say";
-import Contact from "../../components/sections/contact/contact";
-import {graphql} from "gatsby";
+import Hero from "../components/hero/hero";
+import HeyThere from "../components/sections/hey-there/hey-there";
+import ServicesGrid from "../components/sections/services-grid/services-grid";
+import SectionBreak from "../components/sections/section-break";
+import WhatTheySay from "../components/sections/what-they-say/what-they-say";
+import Contact from "../components/sections/contact/contact";
+import {graphql, useStaticQuery} from "gatsby";
 
-const HomePageTemplate = ({data: {wpPage}}) => {
-    return (
-        <Layout>
-            <Seo post={wpPage} />
-            <Hero isHome={true}/>
-            <HeyThere/>
-            <ServicesGrid/>
-            <SectionBreak/>
-            <WhatTheySay/>
-            <Contact/>
-        </Layout>
-    )
-}
-export default HomePageTemplate;
+const HomePage = () => {
 
-export const query = graphql`
-    query HomePageTemplateQuery($id: String!) {
-        wpPage(id: {eq: $id}) {
+    const {
+        wpPage
+    } = useStaticQuery(graphql`
+    query HomePageSEOQuery {
+        wpPage(id: {eq: "cG9zdDo5"}) {
             id
             nodeType
             title
@@ -63,4 +52,18 @@ export const query = graphql`
             }
         }
     }
-`
+`)
+
+    return (
+        <Layout>
+            <Seo post={wpPage} />
+            <Hero isHome={true}/>
+            <HeyThere/>
+            <ServicesGrid/>
+            <SectionBreak/>
+            <WhatTheySay/>
+            <Contact/>
+        </Layout>
+    )
+}
+export default HomePage;
