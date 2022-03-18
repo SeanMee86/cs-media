@@ -6,13 +6,25 @@ export function TestimonialQuery() {
           wpPage(slug: {eq: "home"}) {
             whatTheySay {
               whatTheySayGraphicOne {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               whatTheySayGraphicTwo {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               whatTheySayFirstServiceGraphic {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               whatTheySayBackgroundColor
               whatTheySayTitle

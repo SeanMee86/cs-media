@@ -2,6 +2,7 @@ import * as React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import * as contactStyles from './contact.module.scss';
 import Form from "../../form/form";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const Contact = () => {
     const {
@@ -9,7 +10,7 @@ const Contact = () => {
             getOnTheList: {
                 getOnTheListCopy,
                 getOnTheListImage: {
-                    sourceUrl
+                    localFile
                 },
                 getOnTheListTitle
             }
@@ -20,7 +21,11 @@ const Contact = () => {
             getOnTheList {
               getOnTheListCopy
               getOnTheListImage {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 1200, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               getOnTheListTitle
             }
@@ -31,7 +36,7 @@ const Contact = () => {
         <>
             <div id={'contact'} className={contactStyles.getOnTheListContainer}>
                 <div className={contactStyles.imageContainer}>
-                    <img src={sourceUrl} alt=""/>
+                    <GatsbyImage image={getImage(localFile)} alt=""/>
                 </div>
                 <div>
                     <h2 style={{color: '#805b52'}}>{getOnTheListTitle}</h2>

@@ -31,7 +31,6 @@ export const onRenderBody = ({
             resolveUrl={(url) => {
                 const proxyDomains=[
                     "www.googletagmanager.com",
-                    "www.google-analytics.com"
                 ]
                 if (proxyDomains.includes(url.hostname)) {
                     const proxyUrl = new URL("https://cdn.builder.io/api/v1/proxy-api")

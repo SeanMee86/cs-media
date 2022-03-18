@@ -13,11 +13,18 @@
 }
 
 .heyThereContent {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 960px;
+
+  .heyThereCopy {
+    @media screen and (min-width: 991px) {
+      grid-column: 2/-1;
+    }
+  }
 
   .heyThereSignature {
     color: #9b7963;
@@ -46,12 +53,19 @@
   }
 
   @media screen and (max-width: 991px) {
-    flex-flow: column;
+    grid-template-columns: 1fr;
 
     img {
       margin-bottom: 30px;
       max-width: 100%;
     }
+  }
+}
+
+.image {
+  @media screen and (max-width: 991px) {
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
 

@@ -11,16 +11,32 @@ export function HeyThereQuery() {
               heyThereSignature
               heyThereJobTitle
               heyThereImage {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               heyThereGraphicOne {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               heyThereGraphicTwo {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
               heyThereSecondServiceGraphic {
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
               }
             }
           }

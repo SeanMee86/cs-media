@@ -28,6 +28,15 @@
   }
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  background-color: rgba(65, 80, 76, 0.75);
+  min-width: 100%;
+}
+
 .heroLogo {
   max-width: 100%;
   position: relative;
