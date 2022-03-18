@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-const {copyLibFiles} = require('@builder.io/partytown')
+const {copyLibFiles} = require('@builder.io/partytown/utils')
 
 exports.onPreBootstrap = async () => {
     const destPath = "./public/~partytown"
