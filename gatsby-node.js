@@ -4,6 +4,15 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
+const {copyLibFiles} = require('@builder.io/partytown/utils')
+
+exports.onPreBootstrap = async () => {
+    const destPath = "./public/~partytown"
+
+    console.log(`copying partytown to base path ${destPath}`)
+    await copyLibFiles(destPath);
+}
+
 // You can delete this file if you're not using it
 
 exports.createPages = async function({actions, graphql}) {
