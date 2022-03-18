@@ -98,7 +98,6 @@ export const query = graphql`
                 metaDesc
                 focuskw
                 metaKeywords
-                metaRobotsNoindex
                 metaRobotsNofollow
                 opengraphTitle
                 opengraphDescription
