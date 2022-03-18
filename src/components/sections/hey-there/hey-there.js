@@ -33,7 +33,7 @@ const HeyThere = (props) => {
         </div>)
     const secondServiceImage = heyThereSecondServiceGraphic &&
         (<div className={heyThereStyles.secondServiceGraphic}>
-            <GatsbyImage image={getImage(heyThereSecondServiceGraphic.localFile)} alt=""/>
+            <GatsbyImage style={{position: 'absolute', bottom: 0, right: 0, height: '100%'}} image={getImage(heyThereSecondServiceGraphic.localFile)} alt=""/>
         </div>)
 
     const subCopyStyle = {
@@ -50,7 +50,7 @@ const HeyThere = (props) => {
         content = (
             <>
                 <div id={props.anchor} className={heyThereStyles.heyThereContainer} style={{backgroundColor: heyThereBackgroundColor}}>
-                    <div className={heyThereStyles.heyThereContent}>
+                    <div style={props.isService && {display: 'flex'}} className={heyThereStyles.heyThereContent}>
                         <div>
                             <h2 style={{color: '#9b7963', textAlign: 'center'}}>{props.serviceTitle}</h2>
                             <p style={subCopyStyle}>{props.serviceTitleSubcopy}</p>
