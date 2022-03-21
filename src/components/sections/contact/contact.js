@@ -23,7 +23,7 @@ const Contact = () => {
               getOnTheListImage {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 1200, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }

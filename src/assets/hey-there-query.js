@@ -13,28 +13,28 @@ export function HeyThereQuery() {
               heyThereImage {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
               heyThereGraphicOne {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
               heyThereGraphicTwo {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
               heyThereSecondServiceGraphic {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
