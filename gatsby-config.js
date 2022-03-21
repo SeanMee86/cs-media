@@ -1,7 +1,4 @@
 module.exports = {
-  flags: {
-      DEV_SSR: false
-  },
   siteMetadata: {
     title: `CS Media`,
     description: `Social Media Marketing`,
@@ -9,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-preact`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
