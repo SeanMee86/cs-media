@@ -29,7 +29,6 @@ const Layout = ({ children }) => {
                         post {
                             title
                             schemaType
-                            metaRobotsNoindex
                             metaDesc
                         }
                         page {

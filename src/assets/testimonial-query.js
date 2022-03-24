@@ -8,21 +8,21 @@ export function TestimonialQuery() {
               whatTheySayGraphicOne {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
               whatTheySayGraphicTwo {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
               whatTheySayFirstServiceGraphic {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP])
+                    gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP])
                   }
                 }
               }
