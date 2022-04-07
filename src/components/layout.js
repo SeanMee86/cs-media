@@ -129,15 +129,8 @@ const Layout = ({ children }) => {
         window.scroll(0, 0);
     }
 
-    const options = {
-        schemaReplacement: {
-            from: 'https://54.212.245.198',
-            to: 'https://www.csmediaoc.com'
-        }
-    }
-
     return (
-        <SEOContext.Provider value={{global: seo, options}}>
+        <SEOContext.Provider value={{global: seo}}>
             <div>
                 <main style={{overflow: 'hidden'}}>{children}</main>
                 <Footer/>

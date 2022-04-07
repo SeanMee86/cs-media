@@ -42,6 +42,9 @@ export const query = graphql`
                 opengraphDescription
                 opengraphImage {
                     altText
+                    localFile {
+                        publicURL
+                    }
                     sourceUrl
                     srcSet
                 }
