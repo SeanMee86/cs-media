@@ -131,7 +131,7 @@ const Layout = ({ children }) => {
 
     const options = {
         schemaReplacement: {
-            from: 'https://54.212.245.198:443',
+            from: 'https://54.212.245.198',
             to: 'https://www.csmediaoc.com'
         }
     }
