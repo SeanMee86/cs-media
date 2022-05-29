@@ -24,7 +24,7 @@ const SocialIcons = () => {
             <a className={styles.socialIcons} aria-label={'CS Media Pinterest'} href="https://www.pinterest.com/csmediaoc/_saved/" target={"_blank"} rel={'noreferrer'}>
                 <FontAwesomeIcon className={styles.socialIcons} icon={faPinterest} size={'2x'}/>
             </a>
-            <a className={styles.socialIcons} aria-label={'CS Media TikTok'} href="https://vm.tiktok.com/TTPd5hahNq/" target={"_blank"} rel={'noreferrer'}>
+            <a className={styles.socialIcons} aria-label={'CS Media TikTok'} href="https://www.tiktok.com/t/ZTdWQvYJg/" target={"_blank"} rel={'noreferrer'}>
                 <FontAwesomeIcon className={styles.socialIcons} icon={faTiktok} size={'2x'}/>
             </a>
         </div>
